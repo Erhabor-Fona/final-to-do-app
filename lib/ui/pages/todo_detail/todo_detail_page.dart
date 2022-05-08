@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/const/strings.dart';
 import 'package:todo/ui/pages/todo_detail/components/delete_task_button.dart';
 import 'package:todo/ui/widgets/black_safe_area.dart';
 import 'package:todo/ui/widgets/close_keyboard.dart';
@@ -36,8 +37,8 @@ class TodoDetailPage extends StatelessWidget {
                 : [],
             title: Text(
               (type == TodoDetailPageType.create)
-                  ? 'Create Task'
-                  : 'Task details',
+                  ? Strings.createTask
+                  : Strings.taskDetails,
               style:const  TextStyle(
                   fontFamily: 'circular',
                   fontSize: 18,

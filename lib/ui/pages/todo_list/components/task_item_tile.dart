@@ -5,6 +5,7 @@ import 'package:todo/blocs/create_task/bloc.dart';
 import 'package:todo/blocs/delete_task/bloc.dart';
 import 'package:todo/blocs/tasks_list/bloc.dart';
 import 'package:todo/blocs/toggle_completed/bloc.dart';
+import 'package:todo/const/strings.dart';
 import 'package:todo/repositories/todo/models/task_model.dart';
 import 'package:todo/repositories/todo/todo_repository.dart';
 import 'package:todo/ui/pages/todo_detail/todo_detail_page.dart';
@@ -26,11 +27,11 @@ class TaskItemTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var borderColor = task.isCompleted
-        ? Color.fromRGBO(0, 145, 32, 1)
-        : Color.fromRGBO(237, 178, 0, 1);
+        ? const Color.fromRGBO(0, 145, 32, 1)
+        : const Color.fromRGBO(237, 178, 0, 1);
     var bgColor = task.isCompleted
-        ? Color.fromRGBO(238, 255, 244, 1)
-        : Color.fromRGBO(255, 249, 231, 1);
+        ? const Color.fromRGBO(238, 255, 244, 1)
+        : const Color.fromRGBO(255, 249, 231, 1);
     var textColor = borderColor;
     String tagText = task.isCompleted ? task.title.substring(0, 1) : '$index';
     return Material(
@@ -52,8 +53,8 @@ class TaskItemTile extends StatelessWidget {
                       showDialog(
                         context: context,
                         builder: (_) => const AlertDialog(
-                          title: Text("Something went wrong"),
-                          content: Text("Task was not saved"),
+                          title: Text(Strings.somethingWentWrong),
+                          content: Text(Strings.taskNotSaved),
                         ),
                       );
                     }
@@ -65,8 +66,8 @@ class TaskItemTile extends StatelessWidget {
                     id: task.id,
                     onSave: () async {
                       task
-                        ..description = TaskForm.formData['description']
-                        ..title = TaskForm.formData['title'];
+                        ..description = TaskForm.formData[Strings.description]
+                        ..title = TaskForm.formData[Strings.title];
                       context.read<CreateTaskBloc>().add(
                             UpdateTaskStarted(task),
                           );
@@ -99,7 +100,7 @@ class TaskItemTile extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+               const SizedBox(
                   width: 14,
                 ),
                 Expanded(
@@ -108,25 +109,25 @@ class TaskItemTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '${task.title}',
+                      task.title,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                       style: TextStyle(
                         fontFamily: 'hel',
                         fontWeight: FontWeight.w500,
                         fontSize: 14,
-                        color: Color.fromRGBO(6, 5, 27, 1),
+                        color: const Color.fromRGBO(6, 5, 27, 1),
                         decoration: (task.isCompleted
                             ? TextDecoration.lineThrough
                             : TextDecoration.none),
                       ),
                     ),
-                    SizedBox(height:7),
+                    const SizedBox(height:7),
                     Text(
-                      '${task.description}',
+                      task.description,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontFamily: 'hel',
                         fontWeight: FontWeight.w400,
                         fontSize: 12,
@@ -166,8 +167,8 @@ class TaskItemTile extends StatelessWidget {
                         context: context,
                         builder: (_) => const AlertDialog(
                           title:
-                              Text("Something went wrong"),
-                              content: Text("Couldn't update task"),
+                              Text(Strings.somethingWentWrong),
+                              content: Text(Strings.couldNotUpdate),
                         ),
                       );
                     }
@@ -191,10 +192,10 @@ class TaskItemTile extends StatelessWidget {
                         child: Container(
                           
                           child: Container(
-                            margin: EdgeInsets.fromLTRB(10, 16, 16, 10),
-                            child:isLoading?Icon(Icons.refresh): (task.isCompleted)
-                                ? CheckBoxGood()
-                                : CheckBoxEmpty(),
+                            margin: const EdgeInsets.fromLTRB(10, 16, 16, 10),
+                            child:isLoading?const Icon(Icons.refresh): (task.isCompleted)
+                                ? const CheckBoxGood()
+                                : const CheckBoxEmpty(),
                           ),
                         ),
                       ),
