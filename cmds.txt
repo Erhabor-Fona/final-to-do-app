@@ -1,0 +1,50 @@
+adb shell am force-stop com.joovlin.test.todo && adb shell am start -a android.intent.action.RUN -f 0x20000000 --ez enable-background-compilation true --ez    enable-dart-profiling true --ez enable-checked-mode true --ez verify-entry-points true com.joovlin.test.todo/com.joovlin.test.todo.MainActivity && flutter attach -v
+
+adb -s 192.168.43.1:5555 -d shell am force-stop com.joovlin.test.todo && adb -s 192.168.43.1:5555 -d shell am start -a android.intent.action.RUN -f 0x20000000 --ez enable-background-compilation true --ez    enable-dart-profiling true --ez enable-checked-mode true --ez verify-entry-points true com.joovlin.test.todo/com.joovlin.test.todo.MainActivity && flutter attach -v
+
+flutter install && adb shell am force-stop com.joovlin.test.todo && adb shell am start -a android.intent.action.RUN -f 0x20000000 --ez enable-background-compilation true --ez    enable-dart-profiling true --ez enable-checked-mode true --ez verify-entry-points true com.joovlin.test.todo/com.joovlin.test.todo.MainActivity && flutter attach -v
+
+keytool -list -v -alias androiddebugkey -keystore %USERPROFILE%\.android\debug.keystore
+
+"/c/Program Files/Android/Android Studio1/jre/bin/keytool" -list -v -alias ytv -keystore android//ytv.keystore
+
+"/c/Program Files/Android/Android Studio1/jre/bin/keytool"
+
+"/c/Program Files/Android/Android Studio1/jre/bin/keytool" -genkey -v -keystore ytv.keystore -alias ytv -keyalg RSA -keysize 2048 -validity 9999999999
+
+
+adb install -t -r C:\\Users\\user\\Desktop\\YandeCode\\segi\\build\\app\\outputs\\flutter-apk\\app-debug.apk
+
+adb uninstall com.joovlin.test.todo
+
+adb uninstall com.joovlin.test.todo && adb install -t -r C:\\Users\\user\\Desktop\\YandeCode\\segi\\build\\app\\outputs\\flutter-apk\\app-debug.apk && adb shell am force-stop com.joovlin.test.todo && adb shell am start -a android.intent.action.RUN -f 0x20000000 --ez enable-background-compilation true --ez    enable-dart-profiling true --ez enable-checked-mode true --ez verify-entry-points true com.joovlin.test.todo/com.joovlin.test.todo.MainActivity && flutter attach -v
+
+flutter build apk --split-per-abi --obfuscate --split-debug-info=v1  -v
+
+flutter build appbundle --obfuscate --split-debug-info=v1  -v
+
+adb shell setprop debug.firebase.analytics.app com.joovlin.test.todo
+adb logcat | grep 'InAppMessaging'
+
+flutter pub cache 
+
+flutter packages pub run build_runner build
+
+TASKKILL //F //IM dart.exe
+
+"C:\Users\user\AppData\Local\Android\Sdk\emulator\emulator" -list-avds
+"C:\Users\user\AppData\Local\Android\Sdk\emulator\emulator" -avd 3.3_WQVGA_API_27
+"C:\Users\user\AppData\Local\Android\Sdk\emulator\emulator" -avd Nexus_5X_API_27
+"C:\Users\user\AppData\Local\Android\Sdk\emulator\emulator" -avd phone11
+
+
+adb logcat --pid=$(adb shell pidof -s com.joovlin.test.todo)
+
+'C:\\Program Files\\Git\\usr\\bin\\perl.exe' genhtml.perl -o .\\coverage\html .\\coverage\\lcov.info
+flutter test --coverage test/unit_test/task_list_bloc_test.dart
+flutter test  test/unit_test/task_list_bloc_test.dart
+
+perl 'C:\\ProgramData\\chocolatey\\lib\\lcov\\tools\\bin\\genhtml' -o .\\coverage\\html .\\coverage\\lcov.info
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; `
+  iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
