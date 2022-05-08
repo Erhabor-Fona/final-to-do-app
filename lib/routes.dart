@@ -8,7 +8,7 @@ import 'package:todo/ui/pages/todo_list/todo_list_page.dart';
 class Routes{
 
  static Map<String, Widget Function(BuildContext)> routes ={
-    TodoListPage.name: (_)=> TodoListPage(),
+    TodoListPage.name: (_)=> const TodoListPage(),
   };
 
 
