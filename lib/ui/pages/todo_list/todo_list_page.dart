@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo/blocs/create_task/bloc.dart';
 import 'package:todo/blocs/tasks_list/bloc.dart';
+import 'package:todo/const/strings.dart';
 import 'package:todo/repositories/todo/models/task_model.dart';
 import 'package:todo/ui/pages/todo_detail/todo_detail_page.dart';
 import 'package:todo/ui/pages/todo_list/components/task_item_tile.dart';
@@ -46,8 +47,8 @@ class TodoListPage extends StatelessWidget {
                         context: context,
                         builder: (_) => const AlertDialog(
                           title:
-                              Text("Something went wrong"),
-                              content: Text("Couldn't update task"),
+                              Text(Strings.somethingWentWrong),
+                              content: Text(Strings.couldNotUpdate),
                         ),
                       );
                     }
@@ -58,8 +59,8 @@ class TodoListPage extends StatelessWidget {
                       context.read<CreateTaskBloc>().add(
                             CreateTaskStarted(
                               TaskModel.createEmpty(
-                                TaskForm.formData['title'],
-                                TaskForm.formData['description'],
+                                TaskForm.formData[Strings.title],
+                                TaskForm.formData[Strings.description],
                               ),
                             ),
                           );
@@ -86,7 +87,7 @@ class TodoListPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
                           Text(
-                            'Todo List is empty',
+                            Strings.listEmpty,
                             style: TextStyle(
                                 fontFamily: 'circular',
                                 fontSize: 24,
@@ -98,7 +99,7 @@ class TodoListPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
                           Text(
-                            'Create a task',
+                            Strings.createTask,
                             style: TextStyle(
                                 color: Color.fromRGBO(119, 119, 119, 1),
                                 fontFamily: 'circular',

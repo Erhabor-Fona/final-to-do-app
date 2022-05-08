@@ -7,4 +7,5 @@ class Strings {
   static const String description = 'description';
   static const String title = 'title';
   static const String couldNotUpdate = 'Couldn\'t update task';
+  static const String listEmpty = 'Todo List is empty';
 }
