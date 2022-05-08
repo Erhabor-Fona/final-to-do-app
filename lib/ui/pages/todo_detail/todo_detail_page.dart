@@ -38,7 +38,7 @@ class TodoDetailPage extends StatelessWidget {
               (type == TodoDetailPageType.create)
                   ? 'Create Task'
                   : 'Task details',
-              style: TextStyle(
+              style:const  TextStyle(
                   fontFamily: 'circular',
                   fontSize: 18,
                   fontWeight: FontWeight.w400),

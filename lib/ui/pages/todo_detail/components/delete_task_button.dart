@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo/blocs/delete_task/bloc.dart';
 import 'package:todo/blocs/tasks_list/bloc.dart';
+import 'package:todo/const/strings.dart';
 import 'package:todo/ui/widgets/disable_widget.dart';
 
 class DeleteTaskButton extends StatelessWidget {
@@ -22,8 +23,8 @@ class DeleteTaskButton extends StatelessWidget {
                           context: context,
                           builder: (_) => const AlertDialog(
                             title:
-                                Text("Something went wrong"),
-                            content: Text("Task was not deleted"), 
+                                Text(Strings.somethingWentWrong),
+                            content: Text(Strings.taskWasNotDeleted),
 
 
                           ),
